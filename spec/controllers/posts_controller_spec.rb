@@ -15,13 +15,6 @@ RSpec.describe PostsController, type: :controller do
         expect(response).to have_http_status(200)
       end
     end
-    context "after not signing in" do
-
-      it "responds with 302" do
-        get :index
-        expect(response).to have_http_status(302)
-      end
-    end
   end
 
   describe "GET /new " do
