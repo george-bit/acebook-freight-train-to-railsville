@@ -37,4 +37,10 @@ RSpec.feature 'Posts', type: :feature do
       click_link "Delete"
     end
   end
+
+  scenario 'username displayed on posts index view' do
+    sign_up
+    add_post
+    expect(page).to have_content('test123')
+  end
 end
