@@ -3,7 +3,7 @@
 def sign_up
   visit '/'
   click_link 'Sign up'
-  fill_in 'Username', with: 'test1234'
+  fill_in 'Username', with: 'test123'
   fill_in 'Email', with: 'test@example.com'
   fill_in 'Password', with: 'test1234'
   fill_in 'Password confirmation', with: 'test1234'
