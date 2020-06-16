@@ -12,9 +12,9 @@
     <tr>
         <td><%= simple_format(post.message) %></td>
         <td><%= post.created_at %></td>
-        <td><%= post.user.email%></td>
+        <td><a href=user_path(user)><%= post.user.email%></a></td>
   <% if current_user == post.user %>
-        <td class='edit'><%= link_to 'Edit', edit_post_path(post) %></td>
+        <td class='edit'><%= link_to 'Edit', post_path(post) %></td>
         <td class='delete'><%= link_to 'Delete', post_path(post),
               method: :delete,
               data: { confirm: 'Are you sure?' } %></td>
