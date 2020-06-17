@@ -1,11 +1,12 @@
 <div class="d-flex align-items-center min-vh-100">
   <div class="container text-center">
+    <%= image_tag("AcebookCombined-GreyWhiteBG.png", alt: "Sign up/in", width: "200", height: "200") %>
     <h1 style="font-family :helvetica;">Log in</h1>
     <br>
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="field">
         <%= f.label :username_or_email %><br />
-        <%= f.text_field :login, autofocus: true, autocomplete: "email", border: "5px solid green;" %>
+        <%= f.text_field :login, autofocus: true, autocomplete: "email"%>
       </div>
       <br>
       <div class="field">
@@ -19,9 +20,10 @@
           <%= f.label :remember_me %>
         </div>
       <% end %>
+      <br>
 
       <div class="actions">
-        <%= f.submit "Log in", class: "btn btn-success" %>
+        <%= f.submit "Log in", class: "btn-testy2" %>
       </div>
     <% end %>
   </div>

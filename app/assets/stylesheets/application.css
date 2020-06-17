@@ -25,6 +25,14 @@
     padding: 1px 65px;
 }
 
+.btn-testy2 {
+   color: #fff;
+   background-color: #228b22;
+   border-color: #228b22;
+   border-radius: 8px;
+   padding: 10px 20px;
+}
+
 .navbar{
   background-color: #228b22;
   border-color: #228b22;
