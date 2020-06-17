@@ -11,7 +11,7 @@
   <% @posts.each do |post| %>
     <tr>
         <td><%= simple_format(post.message) %></td>
-        <td><%= post.created_at %></td>
+        <td><%= post.created_at.strftime("%d-%m-%Y %H:%M:%S") %></td>
         <td><%= link_to post.user.username, user_path(post.user.id) %></td>
   <% if current_user == post.user %>
         <td class='edit'><%= link_to 'Edit', edit_post_path(post) %></td>
