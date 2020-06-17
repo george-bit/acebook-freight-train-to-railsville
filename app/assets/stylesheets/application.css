@@ -16,3 +16,24 @@
  html, body {
      height:100%;
  }
+
+ .btn-testy {
+    color: #fff;
+    background-color: #228b22;
+    border-color: #228b22;
+    border-radius: 8px;
+    padding: 1px 65px;
+}
+
+.navbar{
+  background-color: #228b22;
+  border-color: #228b22;
+  border-radius: 8px;
+}
+.nav-link{
+  color: white;
+}
+
+/* .container-family{
+  padding: 100px 100px;
+} */

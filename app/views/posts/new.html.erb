@@ -2,9 +2,9 @@
   <div class="container text-center">
           <h1 style="font-family :helvetica;">New Article</h1>
           <%= form_for @post do |form| %>
-            <%= form.text_area :message %>
+            <%= form.text_area :message, cols: "45", rows: "6", placeholder: "Type your very interesting post here!" %>
             <br>
-            <%= form.submit "Submit", class: "btn btn-success" %>
+            <%= form.submit "Submit", class: "btn-testy" %>
           <% end %>
        </div>
       </div>
