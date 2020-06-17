@@ -7,24 +7,38 @@
     <%= javascript_include_tag 'application' %>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
-
-  <body style="font-family :helvetica;color :green;">
+  <section>
     <div class="navbar navbar-toggleable-md navbar light bg faded">
-        <div class="nav mr-auto"
-          <ul class="nav">
-            <li class="nav-item">
-              <a class="nav-link active" href="/posts" style="color:green;">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="/register" style="color:green;">Signup</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="/login" style="color:green;">Login</a>
-            </li>
-          </ul>
+      <div class="nav mr-auto"
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link active" href="/posts" style="color:green;">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="/register" style="color:green;">Signup</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="/login" style="color:green;">Login</a>
+          </li>
+        </ul>
         </div>
+          <div class="nav ml-auto">
+          <% if user_signed_in? == true %>
+          <li class="nav-item">
+            <a class="nav-link disabled" style="color:green" href="#"> Signed in as: <%= current_user.username%></a>
+          </li>
+          <li class="nav-item">
+        <a><%= link_to "Sign out", destroy_user_session_path,
+        method: :get,
+        data: { confirm: 'Are you sure?' }, class:"nav-link active", style:"color:green;" %></a>
+        </li>
+        </div>
+        <% end %>
     </div>
+    </section>
+  <body style="font-family :helvetica;color :green;">
     <%= render 'layouts/alerts' %>
     <%= yield %>
   </body>
+
 </html>
