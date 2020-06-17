@@ -3,13 +3,27 @@
   <head>
     <title>Acebook</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
 
-  <body>
+  <body style="font-family :helvetica;color :green;">
+    <div class="navbar navbar-toggleable-md navbar light bg faded">
+        <div class="nav mr-auto"
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link active" href="/posts" style="color:green;">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="/register" style="color:green;">Signup</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="/login" style="color:green;">Login</a>
+            </li>
+          </ul>
+        </div>
+    </div>
     <%= render 'layouts/alerts' %>
     <%= yield %>
   </body>
