@@ -8,11 +8,10 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <section>
-    <div class="navbar navbar-toggleable-md">
+    <div class="navbar navbar-toggleable-md" >
       <div class="nav mr-auto"
-        <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link active" href="/posts">Home</a>
+          <a class="nav-link active" href="/posts"><%= image_tag("AcebookIcon-Grey-WhiteBG.png", alt: "Page logo", width: "40", height: "40") %></a>
           </li>
           <li class="nav-item">
             <a class="nav-link active" href="/register">Signup</a>
@@ -20,7 +19,6 @@
           <li class="nav-item">
             <a class="nav-link active" href="/login">Login</a>
           </li>
-        </ul>
         </div>
           <div class="nav ml-auto">
           <% if user_signed_in? == true %>
