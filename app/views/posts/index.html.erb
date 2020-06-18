@@ -20,8 +20,11 @@
     </div>
   </div>
   <% end %>
+
 <p>
-<%= link_to new_post_path do %>
+<% if user_signed_in? == true %>
+ <%= link_to new_post_path do %>
     New post
+<% end %>
 <% end %>
 <p>

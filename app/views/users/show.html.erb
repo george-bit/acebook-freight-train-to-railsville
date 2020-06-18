@@ -1,28 +1,28 @@
 <h1><%= @user.username %></h1>
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">Message</th>
-      <th scope="col">Created at</th>
-      <th scope="col"></th>
-    </tr>
-  </thead>
-  <tbody>
-  <% @posts.each do |post| %>
-    <tr>
-        <td><%= simple_format(post.message) %></td>
-        <td><%= post.created_at.strftime("%d-%m-%Y %H:%M:%S") %></td>
-  <% if current_user == post.user %>
-        <td class='edit'><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td class='delete'><%= link_to 'Delete', post_path(post),
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %></td>
-  <% end %>
-    </tr>
-  <% end %>
-  </tbody>
-</table>
+<% @posts.each do |post| %>
+<div class="container">
+  <div class="card text-center" style="width: 18rem;">
+    <div style="font-size: 30px;">
+        <%= link_to post.user.username, user_path(post.user.id) %>
+    </div>
+        <br>
+    <div style="font-size: 40px;">
+        <%= simple_format(post.message) %>
+    </div>
+        <br>
+        <%= post.created_at.strftime("%d-%m-%Y %H:%M:%S") %>
 
-<%= link_to new_post_path do %>
-    New post
+  <% if current_user == post.user %>
+        <div class='edit'><%= link_to 'Edit', edit_post_path(post) %></div>
+        <div class='delete'><%= link_to 'Delete', post_path(post),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></div>
+  <% end %>
+  </div>
+</div>
 <% end %>
+<p>
+<%= link_to new_post_path do %>
+  New post
+<% end %>
+<p>
