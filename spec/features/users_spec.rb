@@ -7,7 +7,7 @@ RSpec.feature 'Users', type: :feature do
     User.create(username: 'test1234', email: 'test@example.com', password: 'test1234')
     visit '/login'
     login
-    expect(page).to have_content('Signed in successfully.')
+    expect(page).to have_content('Signed in as:')
   end
 
   scenario 'User is forced to sign up with a username' do
