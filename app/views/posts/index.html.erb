@@ -1,3 +1,11 @@
+<p>
+<% if user_signed_in? == true %>
+ <%= link_to new_post_path do %>
+    New post
+<% end %>
+<% end %>
+<p>
+
   <% @posts.each do |post| %>
   <div class="container">
     <div class="card text-center" style="width: 18rem;">
@@ -20,11 +28,3 @@
     </div>
   </div>
   <% end %>
-
-<p>
-<% if user_signed_in? == true %>
- <%= link_to new_post_path do %>
-    New post
-<% end %>
-<% end %>
-<p>
