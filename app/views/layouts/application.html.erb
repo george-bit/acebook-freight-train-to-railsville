@@ -13,12 +13,14 @@
           <li class="nav-item">
           <a class="nav-link active" href="/posts"><%= image_tag("AcebookIcon-Grey-WhiteBG.png", alt: "Page logo", width: "40", height: "40") %></a>
           </li>
+          <% if user_signed_in? == false %>
           <li class="nav-item">
             <a class="nav-link active" href="/register">Sign up</a>
           </li>
           <li class="nav-item">
             <a class="nav-link active" href="/login">Login</a>
           </li>
+          <% end %>
         </div>
           <div class="nav ml-auto">
           <% if user_signed_in? == true %>
@@ -34,7 +36,14 @@
         </li>
         </div>
         <% end %>
-    </div>
+        <div class="nav">
+          <li class="nav-item-1">
+          <form action="/search">
+            <input name="q" type="text" placeholder="Search" aria-label="Search">
+            <button type="submit">Search</button>
+          </form>
+          </li>
+        </div>
     </section>
   <body style="font-family :helvetica;color :#228b22;">
     <%= render 'layouts/alerts' %>

@@ -1,37 +1,32 @@
-<form action="/search">
-  <input name="q" type="text" placeholder="Search" aria-label="Search">
-  <button type="submit">Search</button>
-</form>
-
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">Message</th>
-      <th scope="col">Created at</th>
-      <th scope="col">User</th>
-      <th scope="col"></th>
-    </tr>
-  </thead>
-  <tbody>
-  <% @posts.each do |post| %>
-    <tr>
-        <td><%= simple_format(post.message) %></td>
-        <td><%= post.created_at.strftime("%d-%m-%Y %H:%M:%S") %></td>
-        <td><%= link_to post.user.username, user_path(post.user.id) %></td>
-  <% if current_user == post.user %>
-        <td class='edit'><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td class='delete'><%= link_to 'Delete', post_path(post),
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %></td>
-  <% end %>
-    </tr>
-  <% end %>
-  </tbody>
-</table>
-
 <p>
-<%= link_to new_post_path do %>
-    New post
+<% if user_signed_in? == true %>
+<div class= "container text-center">
+<%= button_to "New post", new_post_path,
+  method: :get,
+  class:"btn-testy" %>
 <% end %>
-
+</div>
 <p>
+
+  <% @posts.each do |post| %>
+  <div class="container">
+    <div class="card text-center" style="width: 18rem;">
+      <div style="font-size: 30px;">
+          <%= link_to post.user.username, user_path(post.user.id) %>
+      </div>
+          <br>
+      <div style="font-size: 40px;">
+          <%= simple_format(post.message) %>
+      </div>
+          <br>
+          <%= post.created_at.strftime("%d-%m-%Y %H:%M:%S") %>
+
+    <% if current_user == post.user %>
+          <div class='edit'><%= link_to 'Edit', edit_post_path(post) %></div>
+          <div class='delete'><%= link_to 'Delete', post_path(post),
+                method: :delete,
+                data: { confirm: 'Are you sure?' } %></div>
+    <% end %>
+    </div>
+  </div>
+  <% end %>
