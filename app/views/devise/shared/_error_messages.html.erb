@@ -3,7 +3,9 @@
     <ul style="display: inline-block; list-style-position: inside;">
 
       <% resource.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger" role="alert">
         <li style="text-align: center; list-style: none"><%= message %></li>
+      </div>
       <% end %>
     </ul>
   </div>

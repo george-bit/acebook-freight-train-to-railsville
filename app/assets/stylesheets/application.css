@@ -48,6 +48,9 @@
     height: 50px;
     line-height: 50px;
 }
+.error-signup {
+    margin-right: 40px;
+}
 
 /* .container-family{
   padding: 100px 100px;
