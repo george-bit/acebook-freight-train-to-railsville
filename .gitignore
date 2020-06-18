@@ -24,5 +24,4 @@
 
 /coverage/assets
 
-/coverage/.last_run.json
-/coverage/.resultset.json
+/coverage/
