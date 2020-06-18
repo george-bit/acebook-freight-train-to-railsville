@@ -20,4 +20,12 @@ RSpec.feature 'Users', type: :feature do
     expect(page).to have_content("Username can't be blank")
   end
 
+  scenario 'User can click on a username from a search and
+  be directed to that profile page' do
+    sign_up
+    fill_in 'q', with: 'test123'
+    click_button 'Search'
+    click_link 'test123'
+    expect(page).to have_content('test123')
+  end
 end
