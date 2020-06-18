@@ -15,10 +15,10 @@
           </li>
           <% if user_signed_in? == false %>
           <li class="nav-item">
-            <a class="nav-link active" href="/register">Sign up</a>
+            <a class="nav-link active" href="/register" style="color:white;">Sign up</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="/login">Login</a>
+            <a class="nav-link active" href="/login" style="color:white;">Login</a>
           </li>
           <% end %>
         </div>
@@ -39,13 +39,13 @@
         <div class="nav">
           <li class="nav-item-1">
           <form action="/search">
-            <input name="q" type="text" placeholder="Search" aria-label="Search">
+            <input name="q" type="text" placeholder="Search Users" aria-label="Search">
             <button type="submit">Search</button>
           </form>
           </li>
         </div>
     </section>
-  <body style="font-family :helvetica;color :#228b22;">
+  <body style="font-family: helvetica; color: #20b2aa;">
     <%= render 'layouts/alerts' %>
     <%= yield %>
   </body>
