@@ -16,4 +16,10 @@ Rails.application.routes.draw do
   root to: 'posts#index'
 
   get 'search', to: 'users#search'
+
+  resources :posts do
+    member do
+      put "like" => "posts#vote"
+    end
+  end
 end

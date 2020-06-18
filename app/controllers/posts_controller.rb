@@ -2,7 +2,10 @@
 
 # posts controller
 class PostsController < ApplicationController
-  before_action :authenticate_user!, except: [:index]
+  before_action :authenticate_user!, except: [:index], only: [:new, :vote]
+  before_action :set_post, only: [:vote]
+  respond_to :js, :json, :html
+
   load_and_authorize_resource
   def new
     @post = Post.new
@@ -45,6 +48,14 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+  end
+
+  def vote
+    if !current_user.liked? @post
+      @post.liked_by current_user
+    elsif current_user.liked? @post
+      @post.unliked_by current_user
+    end
   end
 
   private
