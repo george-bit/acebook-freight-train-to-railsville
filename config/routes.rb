@@ -14,4 +14,6 @@ Rails.application.routes.draw do
   end
   root 'posts#index'
   root to: 'posts#index'
+
+  get 'search', to: 'users#search'
 end
