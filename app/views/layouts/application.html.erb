@@ -22,6 +22,14 @@
           </li>
           <% end %>
         </div>
+        .<div class="nav">
+          <li class="nav-item-1">
+          <form action="/search">
+            <input name="q" type="text" placeholder="Search" aria-label="Search">
+            <button type="submit">Search</button>
+          </form>
+          </li>
+        </div>
           <div class="nav ml-auto">
           <% if user_signed_in? == true %>
           <li class="nav-item">
@@ -36,13 +44,6 @@
         </li>
         </div>
         <% end %>
-        <li class="nav-item-1">
-        <form action="/search">
-          <input name="q" type="text" placeholder="Search" aria-label="Search">
-          <button type="submit">Search</button>
-        </form>
-        </li>
-    </div>
     </section>
   <body style="font-family :helvetica;color :#228b22;">
     <%= render 'layouts/alerts' %>
