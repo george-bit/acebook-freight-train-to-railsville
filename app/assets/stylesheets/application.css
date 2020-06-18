@@ -49,6 +49,14 @@
     line-height: 50px;
 }
 
+.card{
+  margin-left: 400px;
+}
+
+.navbar .nav-item-1 {
+  margin-top: -25px;
+}
+
 /* .container-family{
   padding: 100px 100px;
 } */
