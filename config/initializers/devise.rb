@@ -3,6 +3,24 @@
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
+  module Devise
+  module Models
+    module Timeoutable
+      # Checks whether the user session has expired based on configured time.
+      def timedout?(last_access)
+        return false if remember_exists_and_not_expired?
+        last_access && last_access <= self.class.timeout_in.ago
+      end
+
+      private
+
+      def remember_exists_and_not_expired?
+        return false unless respond_to?(:remember_expired?)
+        remember_created_at && !remember_expired?
+      end
+    end
+  end
+end
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
@@ -154,7 +172,7 @@ Devise.setup do |config|
 
   # ==> Configuration for :rememberable
   # The time the user will be remembered without asking for credentials again.
-  # config.remember_for = 2.weeks
+  config.remember_for = 2.weeks
 
   # Invalidates all the remember me tokens when the user signs out.
   config.expire_all_remember_me_on_sign_out = true
