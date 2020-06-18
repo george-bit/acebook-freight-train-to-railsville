@@ -11,7 +11,7 @@ def sign_up
 end
 
 def add_post
-  click_link 'New post'
+  click_button 'New post'
   fill_in 'post_message', with: 'Hello, world!'
   click_button 'Submit'
 end
