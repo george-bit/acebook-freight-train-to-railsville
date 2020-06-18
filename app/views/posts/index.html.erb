@@ -1,9 +1,11 @@
 <p>
 <% if user_signed_in? == true %>
- <%= link_to new_post_path do %>
-    New post
+<div class= "container text-center">
+<%= button_to "New post", new_post_path,
+  method: :get,
+  class:"btn-testy" %>
 <% end %>
-<% end %>
+</div>
 <p>
 
   <% @posts.each do |post| %>
