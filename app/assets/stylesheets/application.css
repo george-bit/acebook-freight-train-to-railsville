@@ -56,6 +56,12 @@
   margin-left: 75px;
 }
 
+.card-header-1{
+  background-color: #20b2aa!important;
+  padding-top: 9px;
+  padding-bottom: 9px;
+}
+
 .card .edit{
   float:left;
   margin:0 0 0
