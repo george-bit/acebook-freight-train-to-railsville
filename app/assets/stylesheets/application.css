@@ -48,6 +48,9 @@
     height: 50px;
     line-height: 50px;
 }
+.error-signup {
+    margin-right: 40px;
+}
 
 .card{
   margin-left: 75px;
