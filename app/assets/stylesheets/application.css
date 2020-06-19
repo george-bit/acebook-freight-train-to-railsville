@@ -19,23 +19,23 @@
 
  .btn-testy {
     color: #fff;
-    background-color: #228b22;
-    border-color: #228b22;
+    background-color: #20b2aa;
+    border-color: #20b2aa;
     border-radius: 8px;
     padding: 1px 65px;
 }
 
 .btn-testy2 {
    color: #fff;
-   background-color: #228b22;
-   border-color: #228b22;
+   background-color: #20b2aa;
+   border-color: #20b2aa;
    border-radius: 8px;
    padding: 10px 20px;
 }
 
 .navbar{
-  background-color: #228b22;
-  border-color: #228b22;
+  background-color: #20b2aa;
+  border-color: #20b2aa;
 }
 .nav-link{
   color: white;
@@ -50,5 +50,42 @@
 }
 
 .card{
-  margin-left: 400px;
+  margin-left: 75px;
+}
+
+.card .edit{
+  float:left;
+  margin:0 0 0
+  auto;
+  padding-right: 10px;
+}
+
+.card .delete{
+  float:left;
+  margin:0 0 0 auto;
+}
+
+.container-family{
+  margin-left: 100px;
+}
+
+a:link {
+  color: #2071b2;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:visited {
+  color: #2071b2;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:hover {
+  color: #2071b2;
+  background-color: transparent;
+  text-decoration: underline;
+}
+a:active {
+  color: #2071b2;
+  background-color: transparent;
+  text-decoration: underline;
 }
