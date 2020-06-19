@@ -56,6 +56,12 @@
   margin-left: 75px;
 }
 
+.card-header-1{
+  background-color: #20b2aa!important;
+  padding-top: 9px;
+  padding-bottom: 9px;
+}
+
 .card .edit{
   float:left;
   margin:0 0 0
@@ -87,4 +93,15 @@ a:active {
   color: #2071b2;
   background-color: transparent;
   text-decoration: underline;
+}
+
+.hero-image{
+  background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("https://mymodernmet.com/wp/wp-content/uploads/2019/09/100k-ai-faces-1.jpg");
+
+  height: 100%;
+
+ background-position: center;
+ background-repeat: no-repeat;
+ background-size: cover;
+ position: relative;
 }
